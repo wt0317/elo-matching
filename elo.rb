@@ -60,7 +60,7 @@ puts "Initial solution score: #{bestScore}"
 
 prevScore = bestScore
 convergeCounter = 0
-temperature = 10000000
+temperature = 100000000
 coolingRate = 0.0007
 while temperature > 1 && convergeCounter < 25
   tempSoln = deep_copy(soln)
