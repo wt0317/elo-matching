@@ -60,8 +60,8 @@ puts "Initial solution score: #{bestScore}"
 
 prevScore = bestScore
 convergeCounter = 0
-temperature = 10000
-coolingRate = 0.003
+temperature = 10000000
+coolingRate = 0.0007
 while temperature > 1 && convergeCounter < 25
   tempSoln = deep_copy(soln)
   # Generate new solution
@@ -94,8 +94,7 @@ while temperature > 1 && convergeCounter < 25
     soln = deep_copy(tempSoln)
     bestScore = score
     bestSoln = deep_copy(tempSoln)
-  # If not better but high enough entropy, accept for now
-  elsif (rand > Math.exp(score-bestScore/temperature.to_f))
+  elsif (rand < Math.exp((score-bestScore)/250000000*temperature.to_f))
     soln = deep_copy(tempSoln)
   end
 
