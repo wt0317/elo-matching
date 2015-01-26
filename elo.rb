@@ -60,8 +60,8 @@ puts "Initial solution score: #{bestScore}"
 
 prevScore = bestScore
 convergeCounter = 0
-temperature = 1000000
-coolingRate = 0.0003
+temperature = 10000
+coolingRate = 0.003
 while temperature > 1 && convergeCounter < 25
   tempSoln = deep_copy(soln)
   # Generate new solution
@@ -105,4 +105,3 @@ end
 
 puts "Solution: #{bestSoln}"
 puts "Score: #{bestScore}"
-puts "Recalculate score: #{calcScore(bestSoln)}"
